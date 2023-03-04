@@ -10,14 +10,14 @@ cc_library(
 cc_library(
     name = "wgpu-hdrs",
     hdrs = ["include/wgpu/wgpu.h"],
-    strip_prefix = "include",
+    strip_include_prefix = "include",
     visibility = ["//visibility:public"],
 )
 
 cc_library(
     name = "webgpu-hdrs",
     hdrs = ["include/webgpu-headers/webgpu.h"],
-    strip_prefix = "include",
+    strip_include_prefix = "include",
     visibility = ["//visibility:public"],
 )
 
