@@ -1,8 +1,23 @@
 cc_library(
     name = "hdrs",
-    hdrs = ["include/wgpu.h"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":webgpu-hdrs",
+        ":wgpu-hdrs",
+    ],
+)
+
+cc_library(
+    name = "wgpu-hdrs",
+    hdrs = ["include/wgpu/wgpu.h"],
     strip_prefix = "include",
-    include_prefix = "wgpu",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "webgpu-hdrs",
+    hdrs = ["include/webgpu-headers/webgpu.h"],
+    strip_prefix = "include",
     visibility = ["//visibility:public"],
 )
 
