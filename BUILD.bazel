@@ -1,0 +1,37 @@
+cc_library(
+    name = "hdrs",
+    hdrs = ["include/wgpu.h"],
+    strip_prefix = "include",
+    include_prefix = "wgpu",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "lib-windows-x86_64",
+    srcs = ["windows-x86_64/wgpu_native.lib"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "lib-macos-x86_64",
+    srcs = ["macos-x86_64/libwgpu_native.a"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "lib-ios_sim-x86_64",
+    srcs = ["ios_sim-x86_64/libwgpu_native.a"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "lib-ios-arm64",
+    srcs = ["ios-arm64/libwgpu_native.a"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "lib-linux-x86_64",
+    srcs = ["linux-x86_64/libwgpu_native.a"],
+    visibility = ["//visibility:public"],
+)
